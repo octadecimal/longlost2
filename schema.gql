@@ -4,9 +4,17 @@
 # -----------------------------------------------
 
 type Mutation {
+  createNewPlayer: Player!
   login: Boolean!
+  register: Boolean!
+}
+
+type Player {
+  _id: ID!
+  isRegistered: Boolean!
 }
 
 type Query {
+  getAllPlayers: [Player!]!
   ping: Boolean!
 }

@@ -1,0 +1,7 @@
+{
+  "name": "longlost",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
