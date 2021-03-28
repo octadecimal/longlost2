@@ -12,8 +12,8 @@ export class UserResolver {
     return false;
   }
 
-  @Mutation()
+  @Mutation(() => Boolean)
   async register() {
-    
+    return false;
   }
 }

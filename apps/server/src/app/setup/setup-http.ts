@@ -43,9 +43,9 @@ export const createHTTPConnection = async (schema: GraphQLSchema, port: string) 
     server.applyMiddleware({ app, path });
     server.installSubscriptionHandlers(http);
 
-    app.use((err, _req, res, _next) => {
+    app.use(function (err, req, res, next) {
       if (err.name === 'UnauthorizedError') {
-        res.status(200).json({ errors: [{ message: 'Unauthorized' }] });
+        res.status(200).json({ errors: [{ message: 'Unauthorized', debug: err }] });
       }
     });
 
